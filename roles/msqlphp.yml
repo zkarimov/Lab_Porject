@@ -1,0 +1,9 @@
+---
+- name: Install mysql and Php
+  hosts: db
+  become: true
+  roles:
+    - geerlingguy.php
+    - geerlingguy.php-mysql
+    - geerlingguy.mysql
+    - geerlingguy.phpmyadmin
