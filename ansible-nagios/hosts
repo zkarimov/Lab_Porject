@@ -1,11 +1,11 @@
-ZZ###################################################
+###################################################
 # NOTE: only put one unique host per category here
 ###################################################
 
 # this is your main nagios server and
 # where ansible will deploy it.
 [nagios]
-nagios
+
 
 # use this for generic Linux or FreeBSD servers
 [servers]
@@ -15,10 +15,32 @@ nagios
 
 # inherits servers checks, includes http
 [webservers]
-nsmaster
-dnsslave
-ntp
-ansible
+prdx-nsmaster11
+prdx-nsworker11
+prdx-nsworker21
+prdx-webserver116
+prdx-webserver117
+prdx-webserver216
+prdx-webserver217
+prdx-webserver316
+prdx-webserver317
+prdx-haproxy116
+prdx-haproxy117
+prdx-nfs11
+prdx-mail11
+prdx-samba11
+prdx-db116
+prdx-db117
+prdx-ldap11
+prdx-ansible11
+prdx-wiki11
+prdx-jenkins11
+prdx-docker11
+prdx-kubem11
+prdx-kubew11
+prdx-kubew21
+prdx-ntp11
+prdx-ntp21
 # inherits server checks, includes DNS check
 [dns]
 
