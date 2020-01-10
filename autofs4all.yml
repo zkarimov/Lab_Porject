@@ -1,0 +1,30 @@
+---
+- hosts: all,!time,!prdx-nfs11
+  remote_user: root
+  tasks:
+  - name: install the latest version of autofs
+    yum:
+      name: autofs
+      state: latest
+  - name: make /teamshare dir
+    file:
+      path: /teamshare
+      state: directory
+      mode: '0755'
+  - name: make auto.tshare map file
+    lineinfile:
+      path: /etc/auto.tshare
+      line: shared -fstype=auto prdx-nfs11.ziyotek1.local:/shared
+      create: yes
+  - name: append 'auto.master' with map file/dir location
+    lineinfile:
+      path: /etc/auto.master
+      regexp: '^/misc  /etc/auto.misc'
+      insertafter: '^/misc  /etc/auto.misc'
+      line: /teamshare	/etc/auto.tshare
+  - name: restart autofs
+    service:
+      name: autofs
+      state: restarted
+      enabled: yes
+      

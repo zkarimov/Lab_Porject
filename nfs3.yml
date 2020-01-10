@@ -1,0 +1,20 @@
+---
+- hosts: all,!nfs
+  remote_user: root
+  tasks:
+  - name: install the latest version of nfs-utils
+    yum:
+      name: nfs-utils
+      state: latest
+  - name: mk /share dir
+    file:
+      path: /share
+      state: directory
+      mode: '0755'
+  - name: mount prdx-nfs11:/share
+    mount:
+      name: /share
+      src: prdx-nfs11:/share
+      opts: defaults,rw,bg
+      fstype: nfs
+      state: mounted

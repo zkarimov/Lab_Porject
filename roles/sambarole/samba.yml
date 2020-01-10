@@ -1,0 +1,4 @@
+---
+  - hosts: prdx-samba11
+    roles:
+      - geerlingguy.samba

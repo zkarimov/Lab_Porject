@@ -1,0 +1,8 @@
+---
+- hosts: prdx-jenkins11
+  vars: 
+    jenkins_hostname: prdx-jenkins11.ziyotek1.local
+  roles:
+   - role:  geerlingguy.java
+   - role:  geerlingguy.jenkins
+     become: true

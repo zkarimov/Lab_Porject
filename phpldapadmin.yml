@@ -1,0 +1,12 @@
+---
+- name: Install and configure phpLDAPadmin
+  hosts: prdx-ldap11
+  become: true
+
+  tasks:
+    - name: phpLDAPadmin is present
+      yum:
+        name: phpldapadmin
+        enablerepo: "epel,o17_latest"
+        state: present
+

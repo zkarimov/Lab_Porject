@@ -1,0 +1,12 @@
+---
+- name: MOTD
+  hosts: all
+  become: true
+  tasks:
+  - name: motd
+    copy:
+      src: /etc/motd
+      dest: /etc/motd
+      follow: yes
+   
+  

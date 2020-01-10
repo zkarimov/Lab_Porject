@@ -1,0 +1,16 @@
+---
+- name: Install project packages 
+  hosts: all
+  become: true
+  tasks:
+  - name: Install a yum project packages 
+    yum:
+      name: "{{ item }}"
+      state: latest 
+    with_items:
+    - bind-utils
+    - mlocate
+    - man
+    - man-pages
+    - sysstat
+    

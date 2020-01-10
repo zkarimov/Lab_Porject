@@ -1,0 +1,10 @@
+---
+# The following are located in vars/{{ansible_distribution}}.yml
+#
+# openldap_configuration_file
+# openlap_packages
+
+openldap_os_supported: false
+openldap_skip_defaults: false
+
+openldap: {}

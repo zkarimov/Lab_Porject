@@ -1,0 +1,19 @@
+---
+- name: PHP scripts configuration
+  hosts: prdx-ldap11
+  become: true
+
+  tasks:
+    - name: php scripts are present
+      yum:
+        name:
+          - php
+          - php-mbstring
+          -  php-pear
+        state: present
+
+    - name: Restart service httpd
+      service:
+        name: httpd
+        state: restarted
+

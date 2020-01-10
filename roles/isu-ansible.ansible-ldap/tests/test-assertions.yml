@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  remote_user: root
+
+  roles:
+    - role_under_test
+
+  tasks:
+    - name: "[Test] Does Configuration File Exist?"
+      stat:
+        path: "{{openldap_configuration_file}}"
+      register: openldap_conf
+
+    - name: "[Test] Test File Defaults"
+      shell: "grep 'URI.*ldap://ldap1.example.com ldap://ldap2.example.com' {{openldap_configuration_file}}"
+      when: openldap_conf.stat.exists == True
+      register: openldap_conf_contents
+
+    - name: "[Test] ldapsearch client exists"
+      shell: "which ldapsearch"
+      register: ldapsearch_exists
+
+    - assert:
+        that:
+          - "openldap_conf_contents.rc == 0"
+          - "ldapsearch_exists.rc == 0"

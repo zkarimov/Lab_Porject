@@ -1,0 +1,18 @@
+---
+openldap_configuration_file: /etc/openldap/ldap.conf
+
+openldap_os_supported: true
+
+openldap_packages:
+  - openldap
+  - openldap-clients
+  - cyrus-sasl
+
+openldap_defaults:
+  VERSION: "3"
+  URI: "ldap://ldap1.example.com ldap://ldap2.example.com"
+  BASE: "dc=example,dc=com"
+  HOST: "ldap1.example.com ldap2.example.com"
+  SASL_MECH: "GSSAPI"
+  SASL_REALM: "EXAMPLE.COM"
+  REFERRALS: "no"

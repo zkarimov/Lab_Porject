@@ -1,0 +1,37 @@
+URI								uri
+BASE							base
+BINDDN							dn
+DEREF
+	never, searching, finding, always
+HOST							name:port
+NETWORK_TIMEOUT					int
+PORT							port
+REFERRALS						bool
+SIZELIMIT						int
+TIMELIMIT						int
+TIMEOUT 						int
+
+SASL_MECH
+SASL_REALM
+SASL_AUTHCID
+SASL_AUTHZID
+SASL_SECPROPS (comma separated)
+	none,noplain,noactive,nodict,noanonymous,forwardspec,passcred,minssf=?,maxssf=?,maxbufsize=?
+SASL_NOCANON					bool
+
+GSSAPI_SIGN						bool
+GSSAPI_ENCRYPT					bool
+GSSAPI_ALLOW_REMOTE_PRINCIPAL	bool
+
+TLS_CACERT						string
+TLS_CACERTDIR					string
+TLS_CERT 						string
+TLS_KEY 						string
+TLS_CIPHER_SUITE 				string:cipher-suite-spec
+TLS_PROTOCOL_MIN				major.minor
+TLS_RANDFILE					string
+TLS_REQCERT
+	never, allow, try, demand or hard
+TLS_CRLCHECK
+	none, peer, all
+TLS_CRLFILE						string

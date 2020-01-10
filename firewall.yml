@@ -1,0 +1,11 @@
+---
+- name: firewalld killer
+  hosts: all
+  become: true 
+  tasks: 
+    - name: firewall disable 
+      service:
+        name: firewalld
+        state: stopped
+        enabled: false
+  

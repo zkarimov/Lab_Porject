@@ -1,0 +1,51 @@
+{% from 'macros.j2' import body_option,render_option with context -%}
+# {{ ansible_managed }}
+#
+# LDAP Options
+#
+# See ldap.conf(5) for details
+# This file should be world readable but not world writable.
+
+{{ body_option("VERSION", openldap_VERSION) -}}
+{{ body_option("URI", openldap_URI) -}}
+{{ body_option("BASE", openldap_BASE) -}}
+{{ body_option("BINDDN", openldap_BINDDN) -}}
+{{ body_option("DEREF", openldap_DEREF) -}}
+{{ body_option("HOST", openldap_HOST) -}}
+{{ body_option("NETWORK_TIMEOUT", openldap_NETWORK_TIMEOUT) -}}
+{{ body_option("PORT", openldap_PORT) -}}
+{{ body_option("REFERRALS", openldap_REFERRALS) -}}
+{{ body_option("SIZELIMIT", openldap_SIZELIMIT) -}}
+{{ body_option("TIMELIMIT", openldap_TIMELIMIT) -}}
+{{ body_option("TIMEOUT", openldap_TIMEOUT) -}}
+
+#
+# SASL Options
+#
+{{ body_option("SASL_MECH", openldap_SASL_MECH) -}}
+{{ body_option("SASL_REALM", openldap_SASL_REALM) -}}
+{{ body_option("SASL_AUTHCID", openldap_SASL_AUTHCID) -}}
+{{ body_option("SASL_AUTHZID", openldap_SASL_AUTHZID) -}}
+{{ body_option("SASL_SECPROPS", openldap_SASL_SECPROPS, true) -}}
+{{ body_option("SASL_NOCANON", openldap_SASL_NOCANON) -}}
+
+#
+# GSSAPI Options
+#
+{{ body_option("GSSAPI_SIGN", openldap_GSSAPI_SIGN) -}}
+{{ body_option("GSSAPI_ENCRYPT", openldap_GSSAPI_ENCRYPT) -}}
+{{ body_option("GSSAPI_ALLOW_REMOTE_PRINCIPAL", openldap_GSSAPI_ALLOW_REMOTE_PRINCIPAL) -}}
+
+#
+# TLS Options
+#
+{{ body_option("TLS_CACERT", openldap_TLS_CACERT) -}}
+{{ body_option("TLS_CACERTDIR", openldap_TLS_CACERTDIR) -}}
+{{ body_option("TLS_CERT", openldap_TLS_CERT) -}}
+{{ body_option("TLS_KEY", openldap_TLS_KEY) -}}
+{{ body_option("TLS_CIPHER_SUITE", openldap_TLS_CIPHER_SUITE) -}}
+{{ body_option("TLS_PROTOCOL_MIN", openldap_TLS_PROTOCOL_MIN) -}}
+{{ body_option("TLS_RANDFILE", openldap_TLS_RANDFILE) -}}
+{{ body_option("TLS_REQCERT", openldap_TLS_REQCERT) -}}
+{{ body_option("TLS_CRLCHECK", openldap_TLS_CRLCHECK) -}}
+{{ body_option("TLS_CRLFILE", openldap_TLS_CRLFILE) -}}

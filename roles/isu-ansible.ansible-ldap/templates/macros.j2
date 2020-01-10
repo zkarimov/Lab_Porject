@@ -1,0 +1,30 @@
+{% macro body_option(key,override,comma=false) -%}
+{%   set value = undefined %}
+{%   if override is defined %}
+{%     set value = override %}
+{%   elif openldap[key] is defined %}
+{%     set value = openldap[key] %}
+{%   elif openldap_defaults[key] is defined and openldap_skip_defaults != true %}
+{%     set value = openldap_defaults[key] %}
+{%   endif %}
+{{ render_option(key,value,comma) -}}
+{%- endmacro %}
+
+{#- Render Options Jinja Template #}
+{% macro render_option(key,value,comma=false) -%}
+{%   if value is defined %}
+{%     if value is sameas true %}
+{{ key }} true
+{%     elif value is sameas false %}
+{{ key }} false
+{%     elif value is string or value is number %}
+{{ key }} {{ value }}
+{%     else %}
+{%       if comma == true %}
+{{ key }} {{ value | join(",") }}
+{%       else %}
+{{ key }} {{ value | join(" ") }}
+{%       endif %}
+{%     endif %}
+{%   endif %}
+{%- endmacro %}

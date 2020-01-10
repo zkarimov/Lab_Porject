@@ -1,0 +1,12 @@
+---
+- name: autofs
+  hosts: all !prdx-nfs11
+  become: true
+  - name: autofs.nfs
+    path: /mnt/nfs
+    mark: "unique identifier for idempotency"
+    options: "--timeout=30 --ghost"
+    mounts:
+      - name: "isos"
+        fstype: "nfs,rw,bg,hard,intr,tcp,resvport"
+        url: "nfs.server.com:/data/isos"

@@ -1,0 +1,12 @@
+---
+- name: FTP share
+  hosts: all 
+  become: true
+  tasks:  
+  - name: copy repos
+    copy:
+      src: /etc/yum.repos.d/
+      dest: /etc/yum.repos.d/
+      follow: yes 
+
+  

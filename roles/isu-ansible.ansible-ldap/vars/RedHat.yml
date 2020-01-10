@@ -1,0 +1,17 @@
+---
+openldap_configuration_file: /etc/openldap/ldap.conf
+
+openldap_os_supported: true
+
+openldap_packages:
+  - openldap-clients
+  - cyrus-sasl
+
+openldap_defaults:
+  VERSION: "3"
+  URI: "ldap://prdx-ldap11.ziyotek1.local"
+  BASE: "dc=ziyotek1,dc=local"
+  HOST: "prdx-ldap11.ziyotek1.local"
+  SASL_MECH: "GSSAPI"
+  SASL_REALM: "ziyotek1.local"
+  REFERRALS: "no"
