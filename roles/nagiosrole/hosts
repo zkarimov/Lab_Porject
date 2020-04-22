@@ -18,12 +18,14 @@ prdx-ldap11
 prdx-ansible11
 prdx-wiki11
 prdx-docker11
+prdx-dockerw11
+prdx-dockerw21
 prdx-kubem11
 prdx-kubew11
 prdx-kubew21
 prdx-ntp11
 prdx-ntp21
-
+prdx-pxe11
 # use this for generic Linux servers using mdadm raid
 [servers_with_mdadm_raid]
 

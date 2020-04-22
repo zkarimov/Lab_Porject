@@ -4,15 +4,16 @@
   hosts: all
   tasks: 
     - name: Creating user
-      user: name=Estalder password=password
+      user: name=Abdul password=password
     - name: Creating user
       user: name=Zafar password=password
     - name: Creating user
-      user: name=Artem password=password
+      user: name=Vlad password=password
     - name: Creating user
-      user: name=Yonnick password=password
+      user: name=Hugo password=password
     - name: Creating user
-      user: name=Bekzod password=password
-       
+      user: name=Miki password=password
+    - name: Creating user
+      user: name=Arif password=password   
 
 

@@ -1,8 +1,8 @@
 # roles/mailserver/defaults/main.yml
 ---
-postfix_myhostname: 'mail.bertvv.local'
+postfix_myhostname: 'prdx-mail11.ziyotek1.local'
 
-postfix_mydomain: 'bertvv.local'
+postfix_mydomain: 'ziyotek1.local'
 
 postfix_home_mailbox: 'mail/'
 
@@ -20,5 +20,15 @@ clamav_packages:
   - clamav-lib
   - clamav-server-systemd
 postfix_mynetwork:
-  - 172.16.0.0/16
-postfix_ldap: false
+  - 0.0.0.0/0
+postfix_ldap: true 
+
+ldap_fqdn1: prdx-ldap11.ziyotek1.local
+
+ldap_ou: users
+
+ldap_dcname: prdx-ldap11
+
+ldap_domainname: ziyotek1
+
+ldap_root_domain: local

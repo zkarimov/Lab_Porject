@@ -1,4 +1,4 @@
-- hosts: prdx-kubem11,prdx-kubew11,prdx-wiki11
+- hosts: kube 
 
   vars:
     kubernetes_allow_pods_on_master: true

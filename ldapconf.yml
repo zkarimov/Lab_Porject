@@ -1,6 +1,0 @@
----
-- name: Configure Ldap
-  hosts: prdx-ldap11
-  become: true
-  roles:
-    - andrewrothstein.nss-pam-ldap-configure 

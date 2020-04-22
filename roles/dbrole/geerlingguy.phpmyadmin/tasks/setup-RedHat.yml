@@ -5,3 +5,17 @@
     state: present
     enablerepo: "{{ phpmyadmin_enablerepo }}"
   notify: restart apache
+    
+- name: phpmyadmin_conf_change
+  lineinfile:
+    path: /etc/httpd/conf.d/phpMyAdmin.conf
+    state: present
+    regexp: '\Require ip 127.0.0.1'
+    line: 'Require all granted'
+
+- name: phpmyadmin_conf_change
+  lineinfile:
+    path: /etc/httpd/conf.d/phpMyAdmin.conf
+    state: present
+    regexp: 'Deny from All'
+    line: 'Allow from All'

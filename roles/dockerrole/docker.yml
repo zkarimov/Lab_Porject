@@ -1,5 +1,5 @@
 ---
-- hosts: dkr
+- hosts: docker 
   become: true
   roles:
     - geerlingguy.pip

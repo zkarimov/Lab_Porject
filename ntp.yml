@@ -22,5 +22,8 @@
       src: /etc/ntp.conf
       dest: /etc/ntp.conf
       follow: yes
-
-   
+  - name: restart ntpd 
+    service:
+      name: ntpd
+      state: restarted
+          

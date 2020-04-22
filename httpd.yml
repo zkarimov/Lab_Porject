@@ -1,6 +1,6 @@
 ---
 - name: Install and start Apache HTTPD
-  hosts: all
+  hosts: web 
   become: true
 
   tasks:
